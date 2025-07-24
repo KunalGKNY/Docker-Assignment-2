@@ -69,7 +69,7 @@ pipeline {
 					
 				sudo	 docker exec C1 rm -f /usr/local/apache2/htdocs/index.html || true
 					 
-				sudo	 docker cp /mnt/slave1/workspace/one/index.html C1:/usr/local/apache2/htdocs
+				sudo	 docker cp /mnt/slave2/workspace/one/index.html C1:/usr/local/apache2/htdocs
 					 
                 sudo    docker exec C1 chmod 644 /usr/local/apache2/htdocs/index.html
 					 
