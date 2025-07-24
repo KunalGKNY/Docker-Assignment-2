@@ -35,13 +35,13 @@ pipeline {
 					sh '''
 
                     # Create container C1 if not exists
-                    docker inspect C1 >/dev/null 2>&1 || docker run -dp 80:80 --name C1 httpd
+             sudo       docker inspect C1 >/dev/null 2>&1 || docker run -dp 80:80 --name C1 httpd
 					
-					 docker exec C1 rm -f /usr/local/apache2/htdocs/index.html || true
+				sudo	 docker exec C1 rm -f /usr/local/apache2/htdocs/index.html || true
 					 
-					 docker cp /mnt/slave1/workspace/one/index.html C1:/usr/local/apache2/htdocs
+				sudo	 docker cp /mnt/slave1/workspace/one/index.html C1:/usr/local/apache2/htdocs
 					 
-                    docker exec C1 chmod 644 /usr/local/apache2/htdocs/index.html
+              sudo      docker exec C1 chmod 644 /usr/local/apache2/htdocs/index.html
 					 
 					 
 					
@@ -65,13 +65,13 @@ pipeline {
 					sh '''
 
                     # Create container C1 if not exists
-                    docker inspect C1 >/dev/null 2>&1 || docker run -dp 80:80 --name C1 httpd
+                  sudo  docker inspect C1 >/dev/null 2>&1 || docker run -dp 80:80 --name C1 httpd
 					
-					 docker exec C1 rm -f /usr/local/apache2/htdocs/index.html || true
+				sudo	 docker exec C1 rm -f /usr/local/apache2/htdocs/index.html || true
 					 
-					 docker cp /mnt/slave1/workspace/one/index.html C1:/usr/local/apache2/htdocs
+				sudo	 docker cp /mnt/slave1/workspace/one/index.html C1:/usr/local/apache2/htdocs
 					 
-                    docker exec C1 chmod 644 /usr/local/apache2/htdocs/index.html
+                sudo    docker exec C1 chmod 644 /usr/local/apache2/htdocs/index.html
 					 
 					 
 					
