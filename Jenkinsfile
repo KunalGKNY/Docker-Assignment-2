@@ -1,3 +1,4 @@
+
 pipeline {
     agent { label 'built-in'}
     stages {
@@ -21,7 +22,7 @@ pipeline {
 
  
 
-        stage('Docker container creations') {
+        stage('Docker container creations on slave 1') {
 		  agent { label 'slave1'}
 		  
             steps {
@@ -51,8 +52,8 @@ pipeline {
         }
 
         
-        stage('Docker container creations') {
-		  agent { label 'slave1'}
+        stage('Docker container creations on slave2') {
+		  agent { label 'slave2'}
 		  
             steps {
 			
