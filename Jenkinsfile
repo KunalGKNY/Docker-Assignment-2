@@ -24,6 +24,10 @@ pipeline {
 
         stage('Docker container creations in slave1') {
 		  agent { label 'slave1'}
+
+		options {
+                        skipDefaultCheckout() // Essential to prevent Git clone on slave1
+                    }
             steps {
 			
 			      dir('/mnt/workspace1/') {
@@ -53,6 +57,9 @@ pipeline {
         
 		stage('Docker container creations in slave2') {
 		  agent { label 'slave2'}
+			options {
+                        skipDefaultCheckout() // Essential to prevent Git clone on slave1
+                    }
             steps {
 			
 			      dir('/mnt/workspace1/') {
