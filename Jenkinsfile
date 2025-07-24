@@ -23,7 +23,7 @@ pipeline {
 
         stage('Docker container creations') {
             parallel {
-                stage('Container on Slave1') {
+                containerOnSlave1: {
                     agent { label 'slave1' }
                     steps {
                         unstash 'html-files'
@@ -36,7 +36,7 @@ pipeline {
                     }
                 }
 
-                stage('Container on Slave2') {
+                containerOnSlave2: {
                     agent { label 'slave2' }
                     steps {
                         unstash 'html-files'
