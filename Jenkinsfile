@@ -13,7 +13,7 @@ pipeline {
                     git(
                         branch: 'main',
                         credentialsId: 'e4259c9b-8a98-4c29-8324-6ac34de2c01a',
-                        url: 'https://github.com/KunalGKNY/Docker-Multibranch.git'
+                        url: 'https://github.com/KunalGKNY/Docker-Assignment-2.git'
                     )
 
                     stash name: 'html-files', includes: '*.html'
