@@ -12,7 +12,7 @@ pipeline {
                     echo "Cloning repository..."
                     git(
                         branch: 'main',
-                        credentialsId: 'e4259c9b-8a98-4c29-8324-6ac34de2c01a',
+                        credentialsId: '441c171e-1195-4d3e-ac27-c9e1f15d1728',
                         url: 'https://github.com/KunalGKNY/Docker-Assignment-2.git'
                     )
 					stash name: 'html-files', includes: 'index.html'
