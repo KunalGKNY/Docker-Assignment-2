@@ -13,7 +13,7 @@ pipeline {
                     git(
                         branch: 'main',
                         credentialsId: 'e4259c9b-8a98-4c29-8324-6ac34de2c01a',
-                        url: 'https://github.com/KunalGKNY/Docker-Assignment-2.git'
+                        url: 'https://github.com/KunalGKNY/Docker-Multibranch.git'
                     )
 
                     stash name: 'html-files', includes: '*.html'
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Docker container creations') {
             parallel {
-                containerOnSlave1: {
+                stage('Container on Slave1') {
                     agent { label 'slave1' }
                     steps {
                         unstash 'html-files'
@@ -36,7 +36,7 @@ pipeline {
                     }
                 }
 
-                containerOnSlave2: {
+                stage('Container on Slave2') {
                     agent { label 'slave2' }
                     steps {
                         unstash 'html-files'
